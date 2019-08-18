@@ -1,0 +1,15 @@
+# cache
+**/*.cache
+
+# Compile output
+**/*.exe
+**/*.dll
+**/*.lib
+**/*.pdb
+
+# build directory
+**/bin
+
+# obj
+**/obj/Release
+**/Obj/Debug
