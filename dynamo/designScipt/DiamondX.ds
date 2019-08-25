@@ -1,0 +1,263 @@
+class DiamondX {
+    private xnum: int;
+    private ynum: int;
+    private xdis: double;
+    private ydis: double;
+    private twoLayerPoints: Point[][][];
+    public FlatAllPanelPoints: Point[][][];
+    private constructor DiamondX(){} // hide default constructor
+    public  constructor DiamondX(XNUM: int, YNUM: int, XDIS: double, YDIS: double){
+        this.xnum = XNUM;
+        this.ynum = YNUM;
+        this.xdis = XDIS;
+        this.ydis = YDIS;
+        this.twoLayerPoints = genDiamondList_T1();
+        this.FlatAllPanelPoints = DIAGET();
+    }
+
+    public def DiamondInfo()
+    {
+       return [xnum, ynum, xdis, ydis];
+    } 
+
+    private def DIA_getPoint: Point(x: double, y: double)
+    {
+        return [Imperative]{
+            return Point.ByCoordinates(x, y, 0);
+        }
+    }
+
+    private def DIA_genLayer: Point[][](xnumA, ynumA, xdisA, ydisA)
+    {
+        xlist = 0 .. (xnum - 1) * xdisA .. xdisA;
+        ylist = 0 .. (ynum - 1) * ydisA .. ydisA;
+        return DIA_getPoint(xlist<1>, ylist<2>);
+    }
+
+    private def genDiamondList_T1: Point[][][]()
+    {
+        halfHeight: double = ydis / 2;
+        halfWidth: double = xdis / 2;
+        fL = [Imperative]{
+            firstLayer: Point[][] = DIA_genLayer(xnum, ynum, xdis, ydis);
+            return firstLayer;
+        }
+        sL = [Imperative]{
+            secondLayer: Point[][] = DIA_genLayer(xnum - 1, ynum - 1, xdis, ydis);
+            secondLayerTransform = CoordinateSystem.Translate(CoordinateSystem.ByOrigin(0, 0), 
+                                                             halfWidth, halfHeight, 0);
+            secondLayerX = Autodesk.Geometry.Transform(secondLayer,secondLayerTransform);
+            return secondLayerX;
+        }
+        return [fL, sL];
+    }
+
+    private def DIA_getTriangles: Point[][][](TP: Point[][][])
+    {
+        fl = TP[0];
+        sl = TP[1];
+        fangleA = [Imperative]{
+            triangleList = [];
+            for (i in (0 .. xnum - 2))
+            {
+                triangleList = List.AddItemToEnd([fl[i][0], fl[i+1][0], sl[i][0]], triangleList);
+            }
+            return triangleList;
+        }
+
+        fangleB = [Imperative]{
+            triangleList = [];
+            for (i in (0 .. xnum - 2))
+            {
+                triangleList = List.AddItemToEnd(
+                        [fl[i][ynum - 1], fl[i+1][ynum - 1], sl[i][ynum - 2]], triangleList);
+            }
+            return triangleList;
+        }
+
+        fangleC = [Imperative]{
+            triangleList = [];
+            for (i in (0 .. ynum - 2))
+            {
+                triangleList = List.AddItemToEnd(
+                        [fl[xnum - 1][i], fl[xnum - 1][i+1], sl[xnum - 2][i]], triangleList);
+            }
+            return triangleList;
+        }
+
+
+        fangleD = [Imperative]{
+            triangleList = [];
+            for (i in (0 .. ynum - 2))
+            {
+                triangleList = List.AddItemToEnd([fl[0][i], fl[0][i+1], sl[0][i]], triangleList);
+            }
+            return triangleList;
+        }
+        return [fangleA, fangleB, fangleC, fangleD];
+    }
+
+    private def DIA_getDiamonds: Point[][][](TP: Point[][][])
+    {
+        fl = TP[0];
+        sl = TP[1];
+        fDiamondA = [Imperative]{
+            diaList = [];
+            for (i in (0 .. ynum - 2))
+            {
+                for (j in (1 .. xnum -2))
+                {
+                    diaList = List.AddItemToEnd([fl[j][i], sl[j-1][i], fl[j][i+1], sl[j][i]], diaList);
+                }
+            }
+            return diaList;
+        }
+
+        fDiamondB = [Imperative]{
+            diaList = [];
+            for (i in (0 .. xnum - 2))
+            {
+                for (j in (1 .. ynum -2))
+                {
+                    diaList = List.AddItemToEnd([fl[i][j], sl[i][j-1], fl[i+1][j], sl[i][j]], diaList);
+                }
+            }
+            return diaList;
+        }
+
+        return [fDiamondA, fDiamondB];
+    }
+
+    private def DIAGET: Point[][][]()
+    {
+        ret = [Imperative]{
+            T1: Point[][][] = DIA_getDiamonds(twoLayerPoints);
+            T2: Point[][][] = DIA_getTriangles(twoLayerPoints);
+            return List.Join([T1, T2]);
+        }
+        return ret;
+    }
+
+    private def PointTransA: Point(Pt: Point, disFirstPart: double, disSecondPart: double)
+    {
+        part1 = [Imperative]{
+        if(Pt.Y > (disFirstPart + disSecondPart))
+            return Pt;
+        }
+
+        part2 = [Imperative]{
+        if(part1 != null)
+            return part1;
+        if(Pt.Y < disFirstPart)
+            return Point.ByCoordinates(Pt.X, disFirstPart, Pt.Z + Pt.Y - disFirstPart - disSecondPart);
+        return null;
+        }
+
+        part3 = [Imperative]{
+        if(part2 != null)
+            return part2;
+        offDis = disFirstPart + disSecondPart - Pt.Y;
+        t1 = Math.Sqrt(disSecondPart * disSecondPart - offDis * offDis) - disSecondPart + Pt.Z;
+        return Point.ByCoordinates(Pt.X, Pt.Y, t1);
+        }
+        return part3;
+    }
+
+    private def PointTransB: Point(Pt: Point, disFirstPart: double, disSecondPart: double)
+    {
+        part1 = [Imperative]{
+            if(Pt.Y > (disFirstPart + disSecondPart))
+                return Pt;
+        }
+
+        part2 = [Imperative]{
+            if(part1 != null)
+                return part1;
+            extraDis = (Math.PI / 2 - 1) * disSecondPart;
+            if(Pt.Y < disFirstPart - extraDis)
+                return Point.ByCoordinates(Pt.X, disFirstPart, extraDis + Pt.Z + Pt.Y - disFirstPart - disSecondPart);
+            return null;
+        }
+
+        part3 = [Imperative]{
+            if(part2 != null)
+                return part2;
+            offDis = disFirstPart + disSecondPart - Pt.Y;
+            angle = offDis / disSecondPart * (180 / Math.PI);
+            complementAngle = 90 - angle;
+            zaxis = -(disSecondPart - Math.Sin(complementAngle) * disSecondPart) + Pt.Z;
+            yaxis = disFirstPart + disSecondPart*(1 - Math.Cos(complementAngle));
+            return Point.ByCoordinates(Pt.X, yaxis, zaxis);
+        }
+        return part3;
+    }
+
+    private def swapxy: Point(pt: Point)
+    {
+        return Point.ByCoordinates(pt.Y, pt.X, pt.Z);
+    }
+
+    public def TransformPoints: Point[][][](RX, RY, RateX, RateY)
+    {
+        TA = PointTransB(twoLayerPoints, RateY * ynum * ydis, RY); 
+        TB = swapxy(TA);
+        TC = PointTransB(TB, RateX * xnum * xdis, RX);
+        TD = swapxy(TC);
+        ret = [Imperative]{
+            T1: Point[][][] = DIA_getDiamonds(TD);
+            T2: Point[][][] = DIA_getTriangles(TD);
+            return List.Join([T1, T2]);
+        }
+        return ret;
+    }
+
+    public def TransformPoints: Point[][][]()
+    {
+        return TransformPoints(4*xdis, 4*ydis, 4 / 11, 4 / 11);
+    }
+}
+
+class TwoDimensionListPoint {
+    public data: Point[][][];
+    private Path: FileInfo;
+    private SheetName: string;
+    constructor TwoDimensionListPoint(DATA: Point[][][])
+    {
+        this.Path = null;
+        this.data = DATA;
+        this.SheetName = null;
+    }
+    private constructor TwoDimensionListPoint()
+    {
+        this.Path = null;
+        this.data = null;
+        this.SheetName = null;
+    }
+    constructor FromExcel(Path_: String, SheetName_: String)
+    {
+        this.data = null;
+        this.Path = Path_;
+        this.SheetName = SheetName_;
+    }
+    public def SetPath(Path_: FileInfo, SheetName_: String)
+    {
+        this.Path = Path_;
+        this.SheetName = SheetName_;
+    }
+    public def WriteToExcel()
+    {
+        DSOffice.Data.exportExcel();
+    }
+    private def PointExprToPoint(str: string)
+    {
+        semIdx = String.AllIndicesOf(str, ",", false);
+        assignIdx = String.AllIndicesOf(str, "=", false);
+        first = String.ToNumber(String.Substring(str, assignIdx[0] + 1, 
+                    semIdx[0] - assignIdx[0] - 1));
+        second = String.ToNumber(String.Substring(str, assignIdx[1] + 1, 
+                    semIdx[1] - assignIdx[1] - 1));
+        thrid = String.ToNumber(String.Substring(str, assignIdx[2] + 1, 
+                    String.IndexOf(str, ")") - assignIdx[2] - 1));
+        return Point.ByCoordinates(first, second, thrid);
+    }
+}

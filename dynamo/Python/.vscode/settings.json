@@ -1,0 +1,7 @@
+{
+    // disable python linting for ironpython
+    "python.linting.enabled": true,
+    "python.pythonPath": "python",
+    "python.envFile": "${workspaceFolder}/.env",
+    "python.autoComplete.extraPaths": ["${workspaceFolder}/src/"]
+}

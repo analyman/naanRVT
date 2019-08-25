@@ -13,3 +13,6 @@
 # obj
 **/obj/Release
 **/Obj/Debug
+
+# python cache
+**/__pycache__
