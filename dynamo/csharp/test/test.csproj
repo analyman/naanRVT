@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk" defaultTargets="Clean;Compile">
+
+  <ItemGroup>
+    <ProjectReference Include="..\src\utils\utils.csproj" />
+  </ItemGroup>
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net461</TargetFramework>
+    <PlatformTarget>x64</PlatformTarget>
+  </PropertyGroup>
+
+</Project>

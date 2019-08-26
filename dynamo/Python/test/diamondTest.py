@@ -1,6 +1,6 @@
 import sys
 import pathmagic
-import NaaN.dynamo.Geometry as ndg
+from NaaN.dynamo import Geometry as ndg
 
 
 def Main():

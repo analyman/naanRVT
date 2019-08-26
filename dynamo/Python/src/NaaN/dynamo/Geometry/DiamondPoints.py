@@ -1,6 +1,6 @@
 import math
 from ... import utils as nutils
-from . import pythonPoint as pyPt
+from .pythonPoint import pythonPoint
 
 
 class DiamondPoints(object):
@@ -22,7 +22,7 @@ class DiamondPoints(object):
         return [self.xnum, self.ynum, self.xdis, self.ydis]
 
     def __DIA_getPoint(self, x, y):
-        return pyPt.pythonPoint(x, y, 0)
+        return pythonPoint(x, y, 0)
 
     def __DIA_genlayer(self, xnum, ynum, xdis, ydis, offset):
         ret = []
@@ -38,11 +38,11 @@ class DiamondPoints(object):
         halfwidth = self.xdis / 2
         halfheight = self.ydis / 2
         firstLayer = self.__DIA_genlayer(self.xnum, self.ynum, self.xdis,
-                                         self.ydis, pyPt.pythonPoint(0, 0))
+                                         self.ydis, pythonPoint(0, 0))
         secondLayer = self.__DIA_genlayer(self.xnum - 1, self.ynum - 1,
                                           self.xdis, self.ydis,
-                                          pyPt.pythonPoint(halfwidth,
-                                                           halfheight))
+                                          pythonPoint(halfwidth,
+                                                      halfheight))
         return [firstLayer, secondLayer]
 
     def __DIA_getTriangles(self, TP):
@@ -92,7 +92,17 @@ class DiamondPoints(object):
     def DefaultTransformPoints(self):
         return self.TransformPoints(self.xdis * 4, self.ydis * 4)
 
+    def __repr__(self):
+        return (("{0}.DiamondPoints(xnum = {1}, " +
+                 "ynum = {2}, xdis = {3}, ydis = {4})").
+                format(
+                __package__,
+                self.xnum.__repr__(),
+                self.ynum.__repr__(),
+                self.xdis.__repr__(),
+                self.ydis.__repr__()))
+
     def __str__(self):
-        return nutils.multiLevelMap(
+        return str(nutils.multiLevelMap(
             lambda x: x.__str__(),
-            self.DefaultTransformPoints().AllPanels)
+            self.DefaultTransformPoints().AllPanels))

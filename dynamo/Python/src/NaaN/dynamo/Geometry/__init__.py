@@ -2,3 +2,4 @@
 
 from .DiamondPoints import DiamondPoints
 from .pythonPoint import pythonPoint
+from .DSConverter import pythonPointToDSPoint, PointTopythonPoint
