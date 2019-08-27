@@ -2,6 +2,19 @@
   "version": 3,
   "targets": {
     ".NETFramework,Version=v4.6.1": {
+      "Geometry/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.6.1",
+        "dependencies": {
+          "utils": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Geometry.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Geometry.dll": {}
+        }
+      },
       "utils/1.0.0": {
         "type": "project",
         "framework": ".NETFramework,Version=v4.6.1",
@@ -14,6 +27,19 @@
       }
     },
     ".NETFramework,Version=v4.6.1/win7-x64": {
+      "Geometry/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.6.1",
+        "dependencies": {
+          "utils": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Geometry.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Geometry.dll": {}
+        }
+      },
       "utils/1.0.0": {
         "type": "project",
         "framework": ".NETFramework,Version=v4.6.1",
@@ -27,6 +53,11 @@
     }
   },
   "libraries": {
+    "Geometry/1.0.0": {
+      "type": "project",
+      "path": "../src/Geometry/Geometry.csproj",
+      "msbuildProject": "../src/Geometry/Geometry.csproj"
+    },
     "utils/1.0.0": {
       "type": "project",
       "path": "../src/utils/utils.csproj",
@@ -35,6 +66,7 @@
   },
   "projectFileDependencyGroups": {
     ".NETFramework,Version=v4.6.1": [
+      "Geometry >= 1.0.0",
       "utils >= 1.0.0"
     ]
   },
@@ -68,6 +100,9 @@
       "frameworks": {
         "net461": {
           "projectReferences": {
+            "C:\\Users\\lebesgauu\\Desktop\\dotnetprojects\\NaanRevit\\dynamo\\csharp\\src\\Geometry\\Geometry.csproj": {
+              "projectPath": "C:\\Users\\lebesgauu\\Desktop\\dotnetprojects\\NaanRevit\\dynamo\\csharp\\src\\Geometry\\Geometry.csproj"
+            },
             "C:\\Users\\lebesgauu\\Desktop\\dotnetprojects\\NaanRevit\\dynamo\\csharp\\src\\utils\\utils.csproj": {
               "projectPath": "C:\\Users\\lebesgauu\\Desktop\\dotnetprojects\\NaanRevit\\dynamo\\csharp\\src\\utils\\utils.csproj"
             }

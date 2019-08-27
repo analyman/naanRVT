@@ -4,6 +4,48 @@
     "C:\\Users\\lebesgauu\\Desktop\\dotnetprojects\\NaanRevit\\dynamo\\csharp\\test\\test.csproj": {}
   },
   "projects": {
+    "C:\\Users\\lebesgauu\\Desktop\\dotnetprojects\\NaanRevit\\dynamo\\csharp\\src\\Geometry\\Geometry.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\lebesgauu\\Desktop\\dotnetprojects\\NaanRevit\\dynamo\\csharp\\src\\Geometry\\Geometry.csproj",
+        "projectName": "Geometry",
+        "projectPath": "C:\\Users\\lebesgauu\\Desktop\\dotnetprojects\\NaanRevit\\dynamo\\csharp\\src\\Geometry\\Geometry.csproj",
+        "packagesPath": "C:\\Users\\lebesgauu\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\lebesgauu\\Desktop\\dotnetprojects\\NaanRevit\\dynamo\\csharp\\src\\Geometry\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\lebesgauu\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net461"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net461": {
+            "projectReferences": {
+              "C:\\Users\\lebesgauu\\Desktop\\dotnetprojects\\NaanRevit\\dynamo\\csharp\\src\\utils\\utils.csproj": {
+                "projectPath": "C:\\Users\\lebesgauu\\Desktop\\dotnetprojects\\NaanRevit\\dynamo\\csharp\\src\\utils\\utils.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net461": {}
+      }
+    },
     "C:\\Users\\lebesgauu\\Desktop\\dotnetprojects\\NaanRevit\\dynamo\\csharp\\src\\utils\\utils.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -68,6 +110,9 @@
         "frameworks": {
           "net461": {
             "projectReferences": {
+              "C:\\Users\\lebesgauu\\Desktop\\dotnetprojects\\NaanRevit\\dynamo\\csharp\\src\\Geometry\\Geometry.csproj": {
+                "projectPath": "C:\\Users\\lebesgauu\\Desktop\\dotnetprojects\\NaanRevit\\dynamo\\csharp\\src\\Geometry\\Geometry.csproj"
+              },
               "C:\\Users\\lebesgauu\\Desktop\\dotnetprojects\\NaanRevit\\dynamo\\csharp\\src\\utils\\utils.csproj": {
                 "projectPath": "C:\\Users\\lebesgauu\\Desktop\\dotnetprojects\\NaanRevit\\dynamo\\csharp\\src\\utils\\utils.csproj"
               }

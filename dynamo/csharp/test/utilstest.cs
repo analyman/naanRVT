@@ -4,9 +4,9 @@ using NaaN;
 
 namespace NaaN.Test
 {
-    class Program
+    class utilsTest
     {
-        static void Main(string[] args)
+        public static void utilsTestMain()
         {
             utils_multiLevelMapTest();
 //            utils_twoLevelMapTest();

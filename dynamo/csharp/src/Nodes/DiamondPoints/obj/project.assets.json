@@ -1,0 +1,375 @@
+{
+  "version": 3,
+  "targets": {
+    ".NETFramework,Version=v4.6.1": {
+      "CommonServiceLocator/1.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/NET35/Microsoft.Practices.ServiceLocation.dll": {}
+        },
+        "runtime": {
+          "lib/NET35/Microsoft.Practices.ServiceLocation.dll": {}
+        }
+      },
+      "DynamoVisualProgramming.Core/2.0.1.4955": {
+        "type": "package",
+        "dependencies": {
+          "DynamoVisualProgramming.ZeroTouchLibrary": "2.0.1.4955",
+          "NUnit": "2.6.3",
+          "Newtonsoft.Json": "8.0.3",
+          "Prism": "4.1.0"
+        },
+        "compile": {
+          "lib/net45/DSIronPython.dll": {},
+          "lib/net45/DesignScriptBuiltin.dll": {},
+          "lib/net45/DynamoApplications.dll": {},
+          "lib/net45/DynamoCore.dll": {},
+          "lib/net45/DynamoInstallDetective.dll": {},
+          "lib/net45/DynamoShapeManager.dll": {},
+          "lib/net45/DynamoUtilities.dll": {},
+          "lib/net45/ProtoCore.dll": {},
+          "lib/net45/VMDataBridge.dll": {}
+        },
+        "runtime": {
+          "lib/net45/DSIronPython.dll": {},
+          "lib/net45/DesignScriptBuiltin.dll": {},
+          "lib/net45/DynamoApplications.dll": {},
+          "lib/net45/DynamoCore.dll": {},
+          "lib/net45/DynamoInstallDetective.dll": {},
+          "lib/net45/DynamoShapeManager.dll": {},
+          "lib/net45/DynamoUtilities.dll": {},
+          "lib/net45/ProtoCore.dll": {},
+          "lib/net45/VMDataBridge.dll": {}
+        }
+      },
+      "DynamoVisualProgramming.DynamoCoreNodes/2.0.1.4955": {
+        "type": "package",
+        "dependencies": {
+          "DynamoVisualProgramming.DynamoServices": "2.0.1.4955",
+          "DynamoVisualProgramming.ZeroTouchLibrary": "2.0.1.4955"
+        },
+        "compile": {
+          "lib/net45/Analysis.dll": {},
+          "lib/net45/DSCoreNodes.dll": {},
+          "lib/net45/GeometryColor.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Analysis.dll": {},
+          "lib/net45/DSCoreNodes.dll": {},
+          "lib/net45/GeometryColor.dll": {}
+        }
+      },
+      "DynamoVisualProgramming.DynamoServices/2.0.1.4955": {
+        "type": "package",
+        "compile": {
+          "lib/net45/DynamoServices.dll": {}
+        },
+        "runtime": {
+          "lib/net45/DynamoServices.dll": {}
+        }
+      },
+      "DynamoVisualProgramming.ZeroTouchLibrary/2.0.1.4955": {
+        "type": "package",
+        "dependencies": {
+          "DynamoVisualProgramming.DynamoServices": "2.0.1.4955"
+        },
+        "compile": {
+          "lib/net45/DynamoUnits.dll": {},
+          "lib/net45/ProtoGeometry.dll": {}
+        },
+        "runtime": {
+          "lib/net45/DynamoUnits.dll": {},
+          "lib/net45/ProtoGeometry.dll": {}
+        }
+      },
+      "Newtonsoft.Json/8.0.3": {
+        "type": "package",
+        "compile": {
+          "lib/net45/Newtonsoft.Json.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Newtonsoft.Json.dll": {}
+        }
+      },
+      "NUnit/2.6.3": {
+        "type": "package",
+        "compile": {
+          "lib/nunit.framework.dll": {}
+        },
+        "runtime": {
+          "lib/nunit.framework.dll": {}
+        }
+      },
+      "Prism/4.1.0": {
+        "type": "package",
+        "dependencies": {
+          "CommonServiceLocator": "1.0.0"
+        },
+        "compile": {
+          "lib/NET40/Microsoft.Expression.Interactions.dll": {},
+          "lib/NET40/Microsoft.Practices.Prism.Interactivity.dll": {},
+          "lib/NET40/Microsoft.Practices.Prism.dll": {},
+          "lib/NET40/System.Windows.Interactivity.dll": {}
+        },
+        "runtime": {
+          "lib/NET40/Microsoft.Expression.Interactions.dll": {},
+          "lib/NET40/Microsoft.Practices.Prism.Interactivity.dll": {},
+          "lib/NET40/Microsoft.Practices.Prism.dll": {},
+          "lib/NET40/System.Windows.Interactivity.dll": {}
+        }
+      },
+      "Geometry/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.6.1",
+        "dependencies": {
+          "utils": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Geometry.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Geometry.dll": {}
+        }
+      },
+      "utils/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.6.1",
+        "compile": {
+          "bin/placeholder/utils.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/utils.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "CommonServiceLocator/1.0.0": {
+      "sha512": "RJjv0yxm+Fk/ak/CVMTGr0ng7g/nudkVYos4eQrIDpth3BdE1j7J2ddRm8FXtOoIZbgDqTU6hKq5zoackwL3HQ==",
+      "type": "package",
+      "path": "commonservicelocator/1.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "commonservicelocator.1.0.0.nupkg.sha512",
+        "commonservicelocator.nuspec",
+        "lib/NET35/Microsoft.Practices.ServiceLocation.XML",
+        "lib/NET35/Microsoft.Practices.ServiceLocation.dll",
+        "lib/NET35/Microsoft.Practices.ServiceLocation.pdb",
+        "lib/SL30/Microsoft.Practices.ServiceLocation.XML",
+        "lib/SL30/Microsoft.Practices.ServiceLocation.dll"
+      ]
+    },
+    "DynamoVisualProgramming.Core/2.0.1.4955": {
+      "sha512": "zb/GAWREpmOu5+quQLYz/0v1oLPt5v2QiILpoMM5PrmOak6J+Pgug9DdI+q24xECea9cirr3XyZGGb57gkSIVw==",
+      "type": "package",
+      "path": "dynamovisualprogramming.core/2.0.1.4955",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "build/net45/DynamoCore.XML",
+        "dynamovisualprogramming.core.2.0.1.4955.nupkg.sha512",
+        "dynamovisualprogramming.core.nuspec",
+        "lib/net45/DSIronPython.dll",
+        "lib/net45/DesignScriptBuiltin.dll",
+        "lib/net45/DynamoApplications.dll",
+        "lib/net45/DynamoCore.dll",
+        "lib/net45/DynamoInstallDetective.dll",
+        "lib/net45/DynamoShapeManager.dll",
+        "lib/net45/DynamoUtilities.dll",
+        "lib/net45/ProtoCore.dll",
+        "lib/net45/VMDataBridge.dll"
+      ]
+    },
+    "DynamoVisualProgramming.DynamoCoreNodes/2.0.1.4955": {
+      "sha512": "UY9O2d3abne88HM7n7vjBMVtUmfIecGmb7wyUq9OIIkpUXoYxe886EszOmcZLSd8BOMNrCYJJzRHrhN/HD3xxA==",
+      "type": "package",
+      "path": "dynamovisualprogramming.dynamocorenodes/2.0.1.4955",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "build/net45/Analysis.xml",
+        "build/net45/DSCoreNodes.xml",
+        "build/net45/GeometryColor.xml",
+        "dynamovisualprogramming.dynamocorenodes.2.0.1.4955.nupkg.sha512",
+        "dynamovisualprogramming.dynamocorenodes.nuspec",
+        "lib/net45/Analysis.dll",
+        "lib/net45/DSCoreNodes.dll",
+        "lib/net45/GeometryColor.dll"
+      ]
+    },
+    "DynamoVisualProgramming.DynamoServices/2.0.1.4955": {
+      "sha512": "M24hOiZeLu2d3W1JiymJLx7oRmOlFZ+bxKQH8hSxxWMHEA5jX/Sd88E7+s81mJaIYN9BMy950ciSfKcp6JIdXw==",
+      "type": "package",
+      "path": "dynamovisualprogramming.dynamoservices/2.0.1.4955",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "build/net45/DynamoServices.XML",
+        "dynamovisualprogramming.dynamoservices.2.0.1.4955.nupkg.sha512",
+        "dynamovisualprogramming.dynamoservices.nuspec",
+        "lib/net45/DynamoServices.dll"
+      ]
+    },
+    "DynamoVisualProgramming.ZeroTouchLibrary/2.0.1.4955": {
+      "sha512": "rq/CFSzqQx/uvQyLLu1e+xEo6UuA6wuEVV806Kf/97iM1y4cCu1MfdUeAzhqvMueB/erDB2UmMY/jvOlFaxF/w==",
+      "type": "package",
+      "path": "dynamovisualprogramming.zerotouchlibrary/2.0.1.4955",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "build/net45/ProtoGeometry.XML",
+        "dynamovisualprogramming.zerotouchlibrary.2.0.1.4955.nupkg.sha512",
+        "dynamovisualprogramming.zerotouchlibrary.nuspec",
+        "lib/net45/DynamoUnits.dll",
+        "lib/net45/ProtoGeometry.dll"
+      ]
+    },
+    "Newtonsoft.Json/8.0.3": {
+      "sha512": "KGsYQdS2zLH+H8x2cZaSI7e+YZ4SFIbyy1YJQYl6GYBWjf5o4H1A68nxyq+WTyVSOJQ4GqS/DiPE+UseUizgMg==",
+      "type": "package",
+      "path": "newtonsoft.json/8.0.3",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net20/Newtonsoft.Json.dll",
+        "lib/net20/Newtonsoft.Json.xml",
+        "lib/net35/Newtonsoft.Json.dll",
+        "lib/net35/Newtonsoft.Json.xml",
+        "lib/net40/Newtonsoft.Json.dll",
+        "lib/net40/Newtonsoft.Json.xml",
+        "lib/net45/Newtonsoft.Json.dll",
+        "lib/net45/Newtonsoft.Json.xml",
+        "lib/portable-net40+sl5+wp80+win8+wpa81/Newtonsoft.Json.dll",
+        "lib/portable-net40+sl5+wp80+win8+wpa81/Newtonsoft.Json.xml",
+        "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Newtonsoft.Json.dll",
+        "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Newtonsoft.Json.xml",
+        "newtonsoft.json.8.0.3.nupkg.sha512",
+        "newtonsoft.json.nuspec",
+        "tools/install.ps1"
+      ]
+    },
+    "NUnit/2.6.3": {
+      "sha512": "zGYW/N4U8H1Y6Xr6aGQZgaDtfpRJSlbx7A9Fg3WNUV3EKEUe1LwjnHw9NH81GVWYzKlOBLZmFp/q90YJwT2vzQ==",
+      "type": "package",
+      "path": "nunit/2.6.3",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/nunit.framework.dll",
+        "lib/nunit.framework.xml",
+        "license.txt",
+        "nunit.2.6.3.nupkg.sha512",
+        "nunit.nuspec"
+      ]
+    },
+    "Prism/4.1.0": {
+      "sha512": "V4pNkp9iutnJToIkPKeHaVT5M2m9sWTgq2xLHPD51OAg5VNS9oTx4E/vZMdXMcPQwpHbHlF04T8fMLKZTo8S3g==",
+      "type": "package",
+      "path": "prism/4.1.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/NET40/Microsoft.Expression.Interactions.dll",
+        "lib/NET40/Microsoft.Practices.Prism.Interactivity.dll",
+        "lib/NET40/Microsoft.Practices.Prism.Interactivity.xml",
+        "lib/NET40/Microsoft.Practices.Prism.dll",
+        "lib/NET40/Microsoft.Practices.Prism.xml",
+        "lib/NET40/System.Windows.Interactivity.dll",
+        "lib/SL4/Microsoft.Expression.Interactions.dll",
+        "lib/SL4/Microsoft.Practices.Prism.Interactivity.dll",
+        "lib/SL4/Microsoft.Practices.Prism.Interactivity.xml",
+        "lib/SL4/Microsoft.Practices.Prism.dll",
+        "lib/SL4/Microsoft.Practices.Prism.xml",
+        "lib/SL4/System.Windows.Interactivity.dll",
+        "lib/SL5/Microsoft.Expression.Interactions.dll",
+        "lib/SL5/Microsoft.Practices.Prism.Interactivity.dll",
+        "lib/SL5/Microsoft.Practices.Prism.Interactivity.xml",
+        "lib/SL5/Microsoft.Practices.Prism.dll",
+        "lib/SL5/Microsoft.Practices.Prism.xml",
+        "lib/SL5/System.Windows.Interactivity.dll",
+        "prism.4.1.0.nupkg.sha512",
+        "prism.nuspec"
+      ]
+    },
+    "Geometry/1.0.0": {
+      "type": "project",
+      "path": "../../Geometry/Geometry.csproj",
+      "msbuildProject": "../../Geometry/Geometry.csproj"
+    },
+    "utils/1.0.0": {
+      "type": "project",
+      "path": "../../utils/utils.csproj",
+      "msbuildProject": "../../utils/utils.csproj"
+    }
+  },
+  "projectFileDependencyGroups": {
+    ".NETFramework,Version=v4.6.1": [
+      "DynamoVisualProgramming.Core >= 2.0.1.4955",
+      "DynamoVisualProgramming.DynamoCoreNodes >= 2.0.1.4955",
+      "Geometry >= 1.0.0",
+      "utils >= 1.0.0"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\lebesgauu\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\dotnet\\sdk\\NuGetFallbackFolder": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "C:\\Users\\lebesgauu\\Desktop\\dotnetprojects\\NaanRevit\\dynamo\\csharp\\src\\Nodes\\DiamondPoints\\DiamondPoints.csproj",
+      "projectName": "DiamondPoints",
+      "projectPath": "C:\\Users\\lebesgauu\\Desktop\\dotnetprojects\\NaanRevit\\dynamo\\csharp\\src\\Nodes\\DiamondPoints\\DiamondPoints.csproj",
+      "packagesPath": "C:\\Users\\lebesgauu\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\lebesgauu\\Desktop\\dotnetprojects\\NaanRevit\\dynamo\\csharp\\src\\Nodes\\DiamondPoints\\obj\\",
+      "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\dotnet\\sdk\\NuGetFallbackFolder"
+      ],
+      "configFilePaths": [
+        "C:\\Users\\lebesgauu\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+      ],
+      "originalTargetFrameworks": [
+        "net461"
+      ],
+      "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net461": {
+          "projectReferences": {
+            "C:\\Users\\lebesgauu\\Desktop\\dotnetprojects\\NaanRevit\\dynamo\\csharp\\src\\Geometry\\Geometry.csproj": {
+              "projectPath": "C:\\Users\\lebesgauu\\Desktop\\dotnetprojects\\NaanRevit\\dynamo\\csharp\\src\\Geometry\\Geometry.csproj"
+            },
+            "C:\\Users\\lebesgauu\\Desktop\\dotnetprojects\\NaanRevit\\dynamo\\csharp\\src\\utils\\utils.csproj": {
+              "projectPath": "C:\\Users\\lebesgauu\\Desktop\\dotnetprojects\\NaanRevit\\dynamo\\csharp\\src\\utils\\utils.csproj"
+            }
+          }
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      }
+    },
+    "frameworks": {
+      "net461": {
+        "dependencies": {
+          "DynamoVisualProgramming.Core": {
+            "target": "Package",
+            "version": "[2.0.1.4955, )"
+          },
+          "DynamoVisualProgramming.DynamoCoreNodes": {
+            "target": "Package",
+            "version": "[2.0.1.4955, )"
+          }
+        }
+      }
+    }
+  }
+}

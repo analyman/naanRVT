@@ -2,6 +2,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\src\utils\utils.csproj" />
+    <ProjectReference Include="..\src\Geometry\Geometry.csproj" />
   </ItemGroup>
 
   <PropertyGroup>

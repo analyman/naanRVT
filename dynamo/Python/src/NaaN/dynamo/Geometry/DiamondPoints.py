@@ -68,10 +68,10 @@ class DiamondPoints(object):
         diamondA = []
         diamondB = []
         for i in range(0, self.ynum - 1):
-            for j in range(0, self.xnum - 1):
+            for j in range(1, self.xnum - 2):
                 diamondA.append([fl[j][i], sl[j-1][i], fl[j][i+1], sl[j][i]])
         for i in range(0, self.xnum - 1):
-            for j in range(1, self.ynum - 1):
+            for j in range(1, self.ynum - 2):
                 diamondB.append([fl[i][j], sl[i][j-1], fl[i+1][j], sl[i][j]])
         return [diamondA, diamondB]
 
