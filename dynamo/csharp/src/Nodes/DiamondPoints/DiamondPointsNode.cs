@@ -7,32 +7,22 @@ using Autodesk.DesignScript.Geometry;
 using Dynamo.Graph.Nodes;
 using ProtoCore.AST.AssociativeAST;
 
-namespace NaaN.dynamo.Nodes
-{
-    [NodeName("DiamondPoints")]
-    [NodeCategory("NaaN.Geometry")]
-    [NodeDescription("建立菱形表面")]
-    [IsDesignScriptCompatible]
-    [InPortNames("XNUM", "YNUM", "XDIS", "YDIS")]
-    [InPortTypes("int", "int", "double", "double")]
-    [InPortDescriptions("", "", "", "")]
-    [OutPortNames("YES")]
-    [OutPortTypes("string")]
-    public class DiamondPointsNode: NodeModel
-    {
-        public DiamondPointsNode()
-        {
-            RegisterAllPorts();
-        }
+using Newtonsoft.Json;
 
-        public override IEnumerable<AssociativeNode> BuildOutputAst(List<AssociativeNode> inputAstNodes)
-        {
-            var functionCall =
-              AstFactory.BuildFunctionCall(
-                (int x, int y) => { return x * y; },
-                new List<AssociativeNode> { inputAstNodes[0], inputAstNodes[1] });
+using NaaN.dynamo.Geometry;
 
-            return new[] { AstFactory.BuildAssignment(GetAstIdentifierForOutputIndex(0), functionCall) };
+namespace NaaN {
+    public static class Geometry{
+        public static List<List<List<Point>>> DiamondPointsN(int xnum, int ynum, double xdis, double ydis)
+        {
+            NaaN.dynamo.Geometry.DiamondPoints xdia = new DiamondPoints(xnum, ynum, xdis, ydis);
+            var retx = utils.multiLevelMapList((object x) => 
+            {
+                CSPoint pt = x as CSPoint;
+                return Point.ByCoordinates(pt.X, pt.Y, pt.Z);
+            }, xdia.AllPanels);
+            List<List<List<Point>>> ret = retx as List<List<List<Point>>>;
+            return ret;
         }
     }
 }

@@ -25,7 +25,7 @@ class pythonPoint:
         offDis = off + radius - self.y
         angle = offDis / radius
         complementAngle = (math.pi / 2) - angle
-        self.z -= (off - math.sin(complementAngle) * radius)
+        self.z -= (radius - math.sin(complementAngle) * radius)
         self.y = off + radius * (1 - math.cos(complementAngle))
         return self
 

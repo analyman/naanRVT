@@ -32,7 +32,7 @@ namespace NaaN.dynamo.Geometry
             double offDis = off + radius - this.y;
             double angle = offDis / radius;
             double complementAngle = (Math.PI / 2) - angle;
-            this.z -= (off - Math.Sin(complementAngle) * radius);
+            this.z -= (radius - Math.Sin(complementAngle) * radius);
             this.y = off + radius * (1 - Math.Cos(complementAngle));
             return;
         }

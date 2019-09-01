@@ -43,7 +43,14 @@
         }
       },
       "frameworks": {
-        "net461": {}
+        "net461": {
+          "dependencies": {
+            "mathnet.numerics": {
+              "target": "Package",
+              "version": "[4.8.1, )"
+            }
+          }
+        }
       }
     },
     "C:\\Users\\lebesgauu\\Desktop\\dotnetprojects\\NaanRevit\\dynamo\\csharp\\src\\utils\\utils.csproj": {

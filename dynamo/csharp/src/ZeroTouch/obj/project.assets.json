@@ -331,13 +331,13 @@
     },
     "Geometry/1.0.0": {
       "type": "project",
-      "path": "../../Geometry/Geometry.csproj",
-      "msbuildProject": "../../Geometry/Geometry.csproj"
+      "path": "../Geometry/Geometry.csproj",
+      "msbuildProject": "../Geometry/Geometry.csproj"
     },
     "utils/1.0.0": {
       "type": "project",
-      "path": "../../utils/utils.csproj",
-      "msbuildProject": "../../utils/utils.csproj"
+      "path": "../utils/utils.csproj",
+      "msbuildProject": "../utils/utils.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -356,11 +356,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\lebesgauu\\Desktop\\dotnetprojects\\NaanRevit\\dynamo\\csharp\\src\\Nodes\\DiamondPoints\\DiamondPoints.csproj",
-      "projectName": "DiamondPoints",
-      "projectPath": "C:\\Users\\lebesgauu\\Desktop\\dotnetprojects\\NaanRevit\\dynamo\\csharp\\src\\Nodes\\DiamondPoints\\DiamondPoints.csproj",
+      "projectUniqueName": "C:\\Users\\lebesgauu\\Desktop\\dotnetprojects\\NaanRevit\\dynamo\\csharp\\src\\ZeroTouch\\ZeroTouch.csproj",
+      "projectName": "ZeroTouch",
+      "projectPath": "C:\\Users\\lebesgauu\\Desktop\\dotnetprojects\\NaanRevit\\dynamo\\csharp\\src\\ZeroTouch\\ZeroTouch.csproj",
       "packagesPath": "C:\\Users\\lebesgauu\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\lebesgauu\\Desktop\\dotnetprojects\\NaanRevit\\dynamo\\csharp\\src\\Nodes\\DiamondPoints\\obj\\",
+      "outputPath": "C:\\Users\\lebesgauu\\Desktop\\dotnetprojects\\NaanRevit\\dynamo\\csharp\\src\\ZeroTouch\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\dotnet\\sdk\\NuGetFallbackFolder"
